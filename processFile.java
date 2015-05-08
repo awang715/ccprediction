@@ -10,7 +10,11 @@
 	import java.nio.file.Paths;
 	import java.util.HashMap;
 	import java.util.HashSet;
-
+        /**
+         * @Author Anqi Wang
+         * extract data from raw
+         * 
+	 **/
 	public class processFile {
 		static int count_file = 0;// number of total files under this directory
 		static HashSet file_paths = new HashSet();// store file paths to be read
