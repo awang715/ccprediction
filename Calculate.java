@@ -257,7 +257,8 @@ public class Calculate{
     total_email+=1;
     String[] tos = addrs[0].split(",");
     List<String> excludeList =  Arrays.asList(tos);
-    
+    String[] true_ccs = addrs[1].split(",");
+    List<String> checkList = Arrays.asList(true_ccs);
     Vector<String> toks = tokenizeDoc(elements[2]);
     HashMap<String,Integer> doc_word = new HashMap<String,Integer>();//cout word freq in this doc
     Iterator itr = toks.iterator();
@@ -339,7 +340,7 @@ public class Calculate{
     for (Map.Entry<String, Double> node : sorted_rerank) {
         if (e<20&&e<sorted_rerank.size()){
         String top_candidate = node.getKey();
-        if (line.indexOf(top_candidate)>-1){
+        if (checkList.contains(top_candidate)){
           if (!p_flag) {
             correct++;
             p_flag = true;
